@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Episode: Codable {
+struct Episode: Codable, Hashable {
     let id: Int
     let url: URL
     let name: String

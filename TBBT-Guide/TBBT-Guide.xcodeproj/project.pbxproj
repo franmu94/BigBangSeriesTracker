@@ -18,6 +18,7 @@
 		D3EF5B672C75CDF700558003 /* jsonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B662C75CDF700558003 /* jsonInteractor.swift */; };
 		D3EF5B692C75CF6000558003 /* URLInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B682C75CF6000558003 /* URLInteractor.swift */; };
 		D3EF5B6D2C77DCEB00558003 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B6C2C77DCEB00558003 /* ViewModel.swift */; };
+		D3EF5B6F2C7D285D00558003 /* SeasonsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B6E2C7D285D00558003 /* SeasonsGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D3EF5B662C75CDF700558003 /* jsonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonInteractor.swift; sourceTree = "<group>"; };
 		D3EF5B682C75CF6000558003 /* URLInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLInteractor.swift; sourceTree = "<group>"; };
 		D3EF5B6C2C77DCEB00558003 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D3EF5B6E2C7D285D00558003 /* SeasonsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				D3EF5B4D2C75C3BE00558003 /* ContentView.swift */,
+				D3EF5B6E2C7D285D00558003 /* SeasonsGrid.swift */,
 				D3EF5B6C2C77DCEB00558003 /* ViewModel.swift */,
 			);
 			name = Views;
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EF5B6F2C7D285D00558003 /* SeasonsGrid.swift in Sources */,
 				D3EF5B4E2C75C3BE00558003 /* ContentView.swift in Sources */,
 				D3EF5B632C75C95500558003 /* Episode.swift in Sources */,
 				D3EF5B612C75C8F100558003 /* EpisodeDTO.swift in Sources */,

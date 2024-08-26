@@ -20,6 +20,6 @@ struct EpisodeListInteractor: JSONInteractorProtocol, URLInteractorProtocol {
     }
     
     func loadEpisodes() throws -> [Episode] {
-        try getJSON(url: bundleURL, type: [Episode].self)
+        try getJSON(url: bundleURL, type: [EpisodeDTO].self).map{ $0.toEpisode() }
     }
 }
