@@ -9,7 +9,7 @@ import Foundation
 
 enum Seasons: Int, CaseIterable, Identifiable {
     var id: Self {self}
-    
+    case todas
     case Primera = 1
     case Segunda
     case Tercera
@@ -30,17 +30,22 @@ final class EpisodesListViewModel: ObservableObject {
     
     @Published var allEpisodes: [Episode] = []
     
-    var seasonEpisodes: [Episode]  = []
-    @Published var season: Seasons = .Primera {
-        didSet{
-            episodesFromSeason(season.rawValue)
+    var seasonEpisodes: [Episode] {
+        allEpisodes.filter { episode in
+            if season != .todas {
+                return episode.season == season.rawValue
+            } else {
+                return true
+            }
         }
     }
+    
+    
+    @Published var season: Seasons = .Segunda
     
     init(episodesInteractor: EpisodeListInteractor = .shared) {
         self.episodesInteractor = episodesInteractor
         getEpisodes()
-        episodesFromSeason(1)
     }
     
     func getEpisodes() {
@@ -51,7 +56,13 @@ final class EpisodesListViewModel: ObservableObject {
         }
     }
     
-    func episodesFromSeason(_ season: Int) {
-        seasonEpisodes = allEpisodes.filter { $0.season == season}
+    
+    func watchedToggle(episode: Episode) {
+        print(episode.isFavorited)
+        if let index = allEpisodes.firstIndex(of: episode) {
+            allEpisodes[index].watched.toggle()
+            print(allEpisodes[index])
+        }
+        
     }
 }

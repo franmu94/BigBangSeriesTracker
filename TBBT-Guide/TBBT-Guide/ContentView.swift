@@ -14,29 +14,24 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(vm.seasonEpisodes, id: \.self) { episode in
-                    Text(episode.name)
+                    EpisodeCell(episode: episode)
+                        .swipeActions (edge: .leading){
+                            Button {
+                                vm.watchedToggle(episode: episode)
+                            } label: {
+                                Image(systemName: episode.watched ? "eye" : "eye.slash" )
+                                    .tint(episode.watched ? .blue : .gray)
+                            }
+                        }
                 }
             }
             .toolbar {
                 Button(action: {
                     showSeasons = true
                 }, label: {
-                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                    Text("Temporada")
                 })
-                   
-                    Picker("", selection: $vm.season) {
-                        ForEach(Seasons.allCases) { season in
-                            Text("Temporada \(season.rawValue)")
-                        }
-                    }
-                Menu {
-                    ForEach(Seasons.allCases) {season in
-                        Text("\(season.rawValue)")
-                        
-                    }
-                } label: {
-                    Text("Temporadas")
-                }
+                
             }
             .sheet(isPresented: $showSeasons, content: {
                 SeasonsGrid(seasonChosed: $vm.season)

@@ -27,6 +27,7 @@ struct EpisodeDTO: Codable {
                 runtime: runtime,
                 image: image,
                 summary: summary,
-                isFavorited: false)
+                isFavorited: false,
+                watched: false)
     }
 }

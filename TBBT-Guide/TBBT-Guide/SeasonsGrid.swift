@@ -9,8 +9,10 @@ import SwiftUI
 
 struct SeasonsGrid: View {
     let adaptative: [GridItem] = [GridItem(.adaptive(minimum: 140))]
-    @Binding var seasonChosed: Seasons
     
+    @Binding var seasonChosed: Seasons
+    @Environment(\.dismiss) private var dismiss
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -18,10 +20,14 @@ struct SeasonsGrid: View {
                     ForEach(Seasons.allCases) { season in
                         VStack {
                             Image("season\(season.rawValue)")
-                            Text("Temporada \(season.rawValue)")
+                            Text(season != .todas ? "Temporada \(season.rawValue)" : "Todas")
+                            
                         }
+                        .padding(.top, season == .todas || season == .Primera ? 16 : 0)
+                        
                         .onTapGesture {
                             seasonChosed = season
+                            dismiss()
                         }
                     }
                 }

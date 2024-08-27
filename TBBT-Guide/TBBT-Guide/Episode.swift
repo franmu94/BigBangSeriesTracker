@@ -18,4 +18,5 @@ struct Episode: Codable, Hashable {
     let image: String
     let summary: String
     var isFavorited: Bool
+    var watched: Bool
 }
