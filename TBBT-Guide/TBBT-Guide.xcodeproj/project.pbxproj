@@ -11,6 +11,7 @@
 		D3C531EF2C7E2EBE00E268A2 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C531EE2C7E2EBE00E268A2 /* PreviewData.swift */; };
 		D3DCC0462C7E6AE90000B7AB /* SeasonsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B6E2C7D285D00558003 /* SeasonsGrid.swift */; };
 		D3DCC0482C7E6B1A0000B7AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B4D2C75C3BE00558003 /* ContentView.swift */; };
+		D3DCC04B2C7F20D10000B7AB /* EpisodeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DCC04A2C7F20D10000B7AB /* EpisodeDetail.swift */; };
 		D3EF5B4C2C75C3BE00558003 /* TBBT_GuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B4B2C75C3BE00558003 /* TBBT_GuideApp.swift */; };
 		D3EF5B502C75C3BF00558003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EF5B4F2C75C3BF00558003 /* Assets.xcassets */; };
 		D3EF5B532C75C3BF00558003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EF5B522C75C3BF00558003 /* Preview Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		D3C531EC2C7E2E7D00E268A2 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		D3C531EE2C7E2EBE00E268A2 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		D3DCC04A2C7F20D10000B7AB /* EpisodeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetail.swift; sourceTree = "<group>"; };
 		D3EF5B482C75C3BE00558003 /* TBBT-Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBBT-Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EF5B4B2C75C3BE00558003 /* TBBT_GuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBBT_GuideApp.swift; sourceTree = "<group>"; };
 		D3EF5B4D2C75C3BE00558003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,15 @@
 				D3EF5B6C2C77DCEB00558003 /* ViewModel.swift */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		D3DCC0492C7F20AC0000B7AB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D3C531EC2C7E2E7D00E268A2 /* EpisodeCell.swift */,
+				D3EF5B6E2C7D285D00558003 /* SeasonsGrid.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 		D3EF5B3F2C75C3BE00558003 = {
@@ -139,8 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				D3EF5B4D2C75C3BE00558003 /* ContentView.swift */,
-				D3EF5B6E2C7D285D00558003 /* SeasonsGrid.swift */,
-				D3C531EC2C7E2E7D00E268A2 /* EpisodeCell.swift */,
+				D3DCC04A2C7F20D10000B7AB /* EpisodeDetail.swift */,
+				D3DCC0492C7F20AC0000B7AB /* Components */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -218,6 +229,7 @@
 			files = (
 				D3DCC0462C7E6AE90000B7AB /* SeasonsGrid.swift in Sources */,
 				D3DCC0482C7E6B1A0000B7AB /* ContentView.swift in Sources */,
+				D3DCC04B2C7F20D10000B7AB /* EpisodeDetail.swift in Sources */,
 				D3EF5B632C75C95500558003 /* Episode.swift in Sources */,
 				D3C531EF2C7E2EBE00E268A2 /* PreviewData.swift in Sources */,
 				D3EF5B612C75C8F100558003 /* EpisodeDTO.swift in Sources */,

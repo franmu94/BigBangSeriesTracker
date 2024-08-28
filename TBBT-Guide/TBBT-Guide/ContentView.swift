@@ -19,8 +19,8 @@ struct ContentView: View {
                             Button {
                                 vm.watchedToggle(episode: episode)
                             } label: {
-                                Image(systemName: episode.watched ? "eye" : "eye.slash" )
-                                    .tint(episode.watched ? .blue : .gray)
+                                Image(systemName: episode.watched ? "eye.slash" : "eye" )
+                                    .tint(episode.watched ? .gray : .blue)
                             }
                         }
                 }

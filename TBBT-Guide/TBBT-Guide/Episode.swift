@@ -19,4 +19,5 @@ struct Episode: Codable, Hashable {
     let summary: String
     var isFavorited: Bool
     var watched: Bool
+    let protagonist: String
 }

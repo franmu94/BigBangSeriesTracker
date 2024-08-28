@@ -18,7 +18,8 @@ extension Episode {
                                   image: "12370",
                                   summary: "Leonard is bummed to learn that his crush, Penny, is seeing someone, so encouraged by his friends and fellow scientists, Leonard actually summons the nerve to ask a woman out on a date.\n",
                                   isFavorited: true,
-                                  watched: true)
+                                  watched: true,
+                                  protagonist: "Leonard")
     
     static let preview2 = Episode(id: 2913,
                                   url: URL(string: "https://www.tvmaze.com/episodes/2915/the-big-bang-theory-1x03-the-fuzzy-boots-corollary")!,
@@ -30,5 +31,6 @@ extension Episode {
                                   image: "12370",
                                   summary: "Leonard is bummed to learn that his crush, Penny, is seeing someone, so encouraged by his friends and fellow scientists, Leonard actually summons the nerve to ask a woman out on a date.\n",
                                   isFavorited: true,
-                                  watched: false)
+                                  watched: false, 
+                                  protagonist: "Sheldom")
 }
