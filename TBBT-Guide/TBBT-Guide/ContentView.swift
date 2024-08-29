@@ -20,7 +20,7 @@ struct ContentView: View {
                                 vm.watchedToggle(episode: episode)
                             } label: {
                                 Image(systemName: episode.watched ? "eye.slash" : "eye" )
-                                    .tint(episode.watched ? .gray : .blue)
+                                    .tint(episode.watched ? .gray : .red)
                             }
                         }
                 }
