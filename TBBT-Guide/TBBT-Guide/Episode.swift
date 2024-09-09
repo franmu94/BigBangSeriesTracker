@@ -18,6 +18,16 @@ struct Episode: Codable, Hashable {
     let image: String
     let summary: String
     var isFavorited: Bool
-    var watched: Bool
+    var watched: Bool 
     let protagonist: String
+    var nota: Int {
+        didSet {
+            watched = true
+            if nota >= 5 {
+                isFavorited = true
+            } else {
+                isFavorited = false
+            }
+        }
+    }
 }

@@ -74,77 +74,44 @@ struct EpisodeDeatil: View {
                             
                             //.listRowBackground(Color.clear) // Evita el fondo de formulario
                         }
-            HStack {
-                Section {
-                    Button(action: {
-                        episode.watched.toggle()
-                    }) {
-                        Image( systemName: "eye" )
-                            .resizable()
-                            .frame(width: 60, height: 40)
-                            .foregroundColor(episode.watched ? .blue.opacity(0.7) : .gray)
+            VStack {
+                HStack {
+                    Section {
+                        Button(action: {
+                            episode.watched.toggle()
+                            if !episode.watched {
+                                episode.nota = 0
+                            }
+                            episode.nota = 0
+                        }) {
+                            Image( systemName: "eye" )
+                                .resizable()
+                                .frame(width: 60, height: 40)
+                                .foregroundColor(episode.watched ? .blue.opacity(0.7) : .gray)
+                        }
+                    
+                        .padding(.trailing, 100) // Padding en el botón
+                        Button(action: {
+                            episode.isFavorited.toggle()
+                        }) {
+                            Image( systemName: "heart.fill" )
+                                .resizable()
+                                .frame(width: 50, height: 40)
+                                .foregroundColor(episode.isFavorited ? .red.opacity(0.7) : .gray)
+                        }
                     }
+
                 }
-             
-                Section {
-                    Button(action: {
-                        episode.isFavorited.toggle()
-                    }) {
-                        Image( systemName: "heart.fill" )
-                            .resizable()
-                            .frame(width: 50, height: 40)
-                            .foregroundColor(episode.isFavorited ? .red.opacity(0.7) : .gray)
-                    }
-                }
+                SwiftUIView(nota: $episode.nota)
 
             }
-            //.listRowBackground(Color.clear) // Evita el fondo de formulario
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            .listRowBackground(Color.clear) // Evita el fondo de formulario
+            .buttonStyle(BorderlessButtonStyle())
             
         }
-        HStack {
-            Section {
-                Spacer()
-                Button(action: {
-                    episode.watched.toggle()
-                }) {
-                    Image( systemName: "eye" )
-                        .resizable()
-                        .frame(width: 60, height: 40)
-                        .foregroundColor(episode.watched ? .blue.opacity(0.7) : .gray)
-                }
-            }
-            
-            Section{
-                
-                
-                Spacer()
-                Spacer()
-                Button(action: {
-                    episode.isFavorited.toggle()
-                }) {
-                    Image( systemName: "heart.fill" )
-                        .resizable()
-                        .frame(width: 50, height: 40)
-                        .foregroundColor(episode.isFavorited ? .red.opacity(0.7) : .gray)
-                }
-                Spacer()
-            }
-
-        }
-        
         .navigationTitle("1x01")
         .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 

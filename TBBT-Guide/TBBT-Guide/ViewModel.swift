@@ -63,6 +63,7 @@ final class EpisodesListViewModel: ObservableObject {
             allEpisodes[index].watched.toggle()
             print(allEpisodes[index])
         }
-        
     }
+    
+    
 }

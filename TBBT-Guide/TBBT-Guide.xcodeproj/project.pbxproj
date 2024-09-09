@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D3C531ED2C7E2E7D00E268A2 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C531EC2C7E2E7D00E268A2 /* EpisodeCell.swift */; };
 		D3C531EF2C7E2EBE00E268A2 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C531EE2C7E2EBE00E268A2 /* PreviewData.swift */; };
+		D3C6B6402C8F97E30086549F /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6B63F2C8F97E30086549F /* SwiftUIView.swift */; };
 		D3DCC0462C7E6AE90000B7AB /* SeasonsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B6E2C7D285D00558003 /* SeasonsGrid.swift */; };
 		D3DCC0482C7E6B1A0000B7AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B4D2C75C3BE00558003 /* ContentView.swift */; };
 		D3DCC04B2C7F20D10000B7AB /* EpisodeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DCC04A2C7F20D10000B7AB /* EpisodeDetail.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		D3C531EC2C7E2E7D00E268A2 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		D3C531EE2C7E2EBE00E268A2 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		D3C6B63F2C8F97E30086549F /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		D3DCC04A2C7F20D10000B7AB /* EpisodeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetail.swift; sourceTree = "<group>"; };
 		D3EF5B482C75C3BE00558003 /* TBBT-Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBBT-Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EF5B4B2C75C3BE00558003 /* TBBT_GuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBBT_GuideApp.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			children = (
 				D3C531EC2C7E2E7D00E268A2 /* EpisodeCell.swift */,
 				D3EF5B6E2C7D285D00558003 /* SeasonsGrid.swift */,
+				D3C6B63F2C8F97E30086549F /* SwiftUIView.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C6B6402C8F97E30086549F /* SwiftUIView.swift in Sources */,
 				D3DCC0462C7E6AE90000B7AB /* SeasonsGrid.swift in Sources */,
 				D3DCC0482C7E6B1A0000B7AB /* ContentView.swift in Sources */,
 				D3DCC04B2C7F20D10000B7AB /* EpisodeDetail.swift in Sources */,
