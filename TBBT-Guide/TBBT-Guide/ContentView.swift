@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var vm = EpisodesListViewModel()
+    @Environment(EpisodesListViewModel.self) var vm
     @State var showSeasons: Bool = false
     var body: some View {
         NavigationStack {
@@ -34,7 +34,7 @@ struct ContentView: View {
                 
             }
             .sheet(isPresented: $showSeasons, content: {
-                SeasonsGrid(seasonChosed: $vm.season)
+                SeasonsGrid()
             })
         }
     }
@@ -42,4 +42,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environment(EpisodesListViewModel())
 }

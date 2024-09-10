@@ -24,11 +24,16 @@ enum Seasons: Int, CaseIterable, Identifiable {
     case Duodecima
 }
 
-
-final class EpisodesListViewModel: ObservableObject {
+@Observable
+final class EpisodesListViewModel {
     let episodesInteractor: EpisodeListInteractor
     
-    @Published var allEpisodes: [Episode] = []
+    var allEpisodes: [Episode] = [] {
+        didSet {
+            print("Se guarda")
+           try? episodesInteractor.saveEpisodes(episodes: allEpisodes)
+        }
+    }
     
     var seasonEpisodes: [Episode] {
         allEpisodes.filter { episode in
@@ -41,7 +46,7 @@ final class EpisodesListViewModel: ObservableObject {
     }
     
     
-    @Published var season: Seasons = .Segunda
+    var season: Seasons = .Segunda
     
     init(episodesInteractor: EpisodeListInteractor = .shared) {
         self.episodesInteractor = episodesInteractor
@@ -56,14 +61,20 @@ final class EpisodesListViewModel: ObservableObject {
         }
     }
     
-    
     func watchedToggle(episode: Episode) {
-        print(episode.isFavorited)
         if let index = allEpisodes.firstIndex(of: episode) {
             allEpisodes[index].watched.toggle()
             print(allEpisodes[index])
         }
     }
+    
+    func favoritedToggle(episode: Episode) {
+        if let index = allEpisodes.firstIndex(of: episode) {
+            allEpisodes[index].isFavorited.toggle()
+            print(allEpisodes[index])
+        }
+    }
+    
     
     
 }

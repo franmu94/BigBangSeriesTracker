@@ -30,7 +30,7 @@ struct EpisodeDTO: Codable {
                 isFavorited: false,
                 watched: false,
                 protagonist: obtenerProtagonista(from: summary),
-                nota: 0)
+                score: 0)
     }
     
     func obtenerProtagonista(from summary: String) -> String {

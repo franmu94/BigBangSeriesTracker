@@ -77,20 +77,21 @@ struct EpisodeDeatil: View {
             VStack {
                 HStack {
                     Section {
+                        Spacer()
                         Button(action: {
                             episode.watched.toggle()
                             if !episode.watched {
-                                episode.nota = 0
+                                episode.score = 0
                             }
-                            episode.nota = 0
+                            episode.score = 0
                         }) {
                             Image( systemName: "eye" )
                                 .resizable()
                                 .frame(width: 60, height: 40)
                                 .foregroundColor(episode.watched ? .blue.opacity(0.7) : .gray)
                         }
-                    
-                        .padding(.trailing, 100) // Padding en el botón
+                        Spacer()
+                        Spacer()
                         Button(action: {
                             episode.isFavorited.toggle()
                         }) {
@@ -99,14 +100,20 @@ struct EpisodeDeatil: View {
                                 .frame(width: 50, height: 40)
                                 .foregroundColor(episode.isFavorited ? .red.opacity(0.7) : .gray)
                         }
+                        Spacer()
+
                     }
 
                 }
-                SwiftUIView(nota: $episode.nota)
-
+                
             }
             .listRowBackground(Color.clear) // Evita el fondo de formulario
             .buttonStyle(BorderlessButtonStyle())
+            Section(header: Text("Your review")) {
+                SwiftUIView(nota: $episode.score)
+            }
+            .buttonStyle(BorderlessButtonStyle())
+
             
         }
         .navigationTitle("1x01")

@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct TBBT_GuideApp: App {
-    //@StateObject var vm = EpisodesListViewModel()
+    @State var viewModel = EpisodesListViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
-                //.environmentObject(vm)
+                .environment(viewModel)
         }
     }
 }

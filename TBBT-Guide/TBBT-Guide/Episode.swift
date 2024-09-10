@@ -20,14 +20,17 @@ struct Episode: Codable, Hashable {
     var isFavorited: Bool
     var watched: Bool 
     let protagonist: String
-    var nota: Int {
+    var score: Int {
         didSet {
-            watched = true
-            if nota >= 5 {
+            if score != 0 {
+                watched = true
+            }
+            if score >= 5 {
                 isFavorited = true
             } else {
                 isFavorited = false
             }
         }
     }
+    var notes: String?
 }

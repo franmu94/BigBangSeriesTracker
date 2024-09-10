@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EpisodeCell: View {
+    @Environment(EpisodesListViewModel.self) var vm
+
     @State var episode: Episode
     var correctedNumber: String {
         episode.number > 10 ? "0\(episode.number)" : "\(episode.number)"
@@ -26,7 +28,7 @@ struct EpisodeCell: View {
             }
             Spacer()
             Button {
-                episode.isFavorited.toggle()
+                vm.favoritedToggle(episode: episode)
             } label: {
                 Image(systemName: "heart.fill")
                     .foregroundStyle(episode.isFavorited ? .red : .gray)
@@ -40,6 +42,8 @@ struct EpisodeCell: View {
 #Preview {
     List {
         EpisodeCell(episode: .preview1)
+            .environment(EpisodesListViewModel())
         EpisodeCell(episode: .preview2)
+            .environment(EpisodesListViewModel())
     }
 }

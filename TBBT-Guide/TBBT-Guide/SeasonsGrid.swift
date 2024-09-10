@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct SeasonsGrid: View {
+    @Environment(EpisodesListViewModel.self) var vm
+
     let adaptative: [GridItem] = [GridItem(.adaptive(minimum: 140))]
     
-    @Binding var seasonChosed: Seasons
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -26,7 +27,7 @@ struct SeasonsGrid: View {
                         .padding(.top, season == .todas || season == .Primera ? 16 : 0)
                         
                         .onTapGesture {
-                            seasonChosed = season
+                            vm.season = season
                             dismiss()
                         }
                     }
@@ -37,5 +38,6 @@ struct SeasonsGrid: View {
 }
 
 #Preview {
-    SeasonsGrid(seasonChosed: .constant(.Cuarta))
+    SeasonsGrid()
+        .environment(EpisodesListViewModel())
 }
