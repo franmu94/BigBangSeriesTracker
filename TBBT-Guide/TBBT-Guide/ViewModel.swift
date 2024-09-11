@@ -35,18 +35,18 @@ final class EpisodesListViewModel {
         }
     }
     
-    var seasonEpisodes: [Episode] {
-        allEpisodes.filter { episode in
-            if season != .todas {
-                return episode.season == season.rawValue
+    var filteredEpisodes: [Episode] {
+        allEpisodes.filter {
+            if !seasonsChoosed.contains(.todas) {
+                seasonsChoosed.map { season in season.rawValue }.contains($0.season)
             } else {
-                return true
+                true
             }
         }
     }
     
     
-    var season: Seasons = .Segunda
+    var seasonsChoosed: Set<Seasons> = [.Primera]
     
     init(episodesInteractor: EpisodeListInteractor = .shared) {
         self.episodesInteractor = episodesInteractor
@@ -60,7 +60,6 @@ final class EpisodesListViewModel {
             print(error)
         }
     }
-    
     func watchedToggle(episode: Episode) {
         if let index = allEpisodes.firstIndex(of: episode) {
             allEpisodes[index].watched.toggle()
@@ -75,6 +74,16 @@ final class EpisodesListViewModel {
         }
     }
     
-    
-    
+    func addSeason(season: Seasons) {
+        if season == .todas {
+            seasonsChoosed = [.todas]
+            return
+        }
+        if seasonsChoosed.contains(season) {
+            seasonsChoosed.remove(season)
+        } else {
+            seasonsChoosed.remove(.todas)
+            seasonsChoosed.insert(season)
+        }
+    }
 }

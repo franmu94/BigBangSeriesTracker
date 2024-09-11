@@ -12,7 +12,9 @@ struct Episode: Codable, Hashable {
     let id: Int
     let url: URL
     let name: String
-    let season, number: Int
+    let season: Int
+    let number: Int
+    let tipicNumber: String
     let airdate: String
     let runtime: Int
     let image: String
@@ -20,17 +22,6 @@ struct Episode: Codable, Hashable {
     var isFavorited: Bool
     var watched: Bool 
     let protagonist: String
-    var score: Int {
-        didSet {
-            if score != 0 {
-                watched = true
-            }
-            if score >= 5 {
-                isFavorited = true
-            } else {
-                isFavorited = false
-            }
-        }
-    }
+    var score: Int
     var notes: String?
 }

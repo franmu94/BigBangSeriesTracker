@@ -17,7 +17,7 @@ struct EpisodeCell: View {
     var body: some View {
         HStack {
             HStack() {
-                Text("\(episode.season)x\(episode.number < 10 ? "0\(episode.number)" : "\(episode.number)")")
+                Text(episode.tipicNumber)
                     .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 10)

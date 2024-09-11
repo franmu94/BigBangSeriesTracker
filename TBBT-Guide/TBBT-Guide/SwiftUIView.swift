@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct StarsComponen: View {
     @Binding var nota: Int
     var body: some View {
         HStack {
@@ -35,5 +35,5 @@ struct SwiftUIView: View {
 }
 
 #Preview {
-    SwiftUIView(nota: .constant(0))
+    StarsComponen(nota: .constant(0))
 }

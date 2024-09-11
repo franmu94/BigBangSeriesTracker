@@ -10,7 +10,7 @@ import SwiftUI
 struct SeasonsGrid: View {
     @Environment(EpisodesListViewModel.self) var vm
 
-    let adaptative: [GridItem] = [GridItem(.adaptive(minimum: 140))]
+    let adaptative: [GridItem] = [GridItem(), GridItem()]
     
     @Environment(\.dismiss) private var dismiss
 
@@ -21,16 +21,30 @@ struct SeasonsGrid: View {
                     ForEach(Seasons.allCases) { season in
                         VStack {
                             Image("season\(season.rawValue)")
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
                             Text(season != .todas ? "Temporada \(season.rawValue)" : "Todas")
-                            
                         }
-                        .padding(.top, season == .todas || season == .Primera ? 16 : 0)
+                        .padding(8)
+                        .background {
+                            //Color(white: 0.75)
+                            Color(vm.seasonsChoosed.contains(season) ? .blue.opacity(0.8) : .gray.opacity(0.4))
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 5)
+                        
                         
                         .onTapGesture {
-                            vm.season = season
-                            dismiss()
+                            vm.addSeason(season: season)
                         }
                     }
+                }
+                .toolbar {
+                    Button(action: {
+                        dismiss()
+                    }, label: {
+                        Text("Done")
+                    })
+                    
                 }
             }
         }

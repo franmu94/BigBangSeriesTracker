@@ -13,25 +13,30 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(vm.seasonEpisodes, id: \.self) { episode in
-                    EpisodeCell(episode: episode)
-                        .swipeActions (edge: .leading){
-                            Button {
-                                vm.watchedToggle(episode: episode)
-                            } label: {
-                                Image(systemName: episode.watched ? "eye.slash" : "eye" )
-                                    .tint(episode.watched ? .gray : .blue)
+                ForEach(vm.filteredEpisodes, id: \.self) { episode in
+                    NavigationLink(value: episode){
+                        EpisodeCell(episode: episode)
+                            .swipeActions (edge: .leading){
+                                Button {
+                                    vm.watchedToggle(episode: episode)
+                                } label: {
+                                    Image(systemName: episode.watched ? "eye.slash" : "eye" )
+                                        .tint(episode.watched ? .gray : .blue)
+                                }
                             }
-                        }
+                    }
                 }
             }
+            //.listStyle(.inset)
+            .navigationDestination(for: Episode.self, destination: { episode in
+                EpisodeDeatil(episode: episode)
+            })
             .toolbar {
                 Button(action: {
                     showSeasons = true
                 }, label: {
                     Text("Temporada")
                 })
-                
             }
             .sheet(isPresented: $showSeasons, content: {
                 SeasonsGrid()
