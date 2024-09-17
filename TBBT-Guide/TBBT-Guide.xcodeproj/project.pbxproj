@@ -10,6 +10,7 @@
 		D38609162C99735D00E384CD /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38609152C99735D00E384CD /* MainTabView.swift */; };
 		D38609182C9982AD00E384CD /* FavoriteGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38609172C9982AD00E384CD /* FavoriteGridCell.swift */; };
 		D386091C2C998D5400E384CD /* FavoriteGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386091B2C998D5400E384CD /* FavoriteGrid.swift */; };
+		D393D8C92C9A3BAA00DE7D63 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393D8C82C9A3BAA00DE7D63 /* UIDeviceExtension.swift */; };
 		D3B3A4F82C920E1200E0A968 /* Ejmplo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3A4F72C920E1200E0A968 /* Ejmplo.swift */; };
 		D3B3A4FA2C92156E00E0A968 /* ejemplo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3A4F92C92156E00E0A968 /* ejemplo2.swift */; };
 		D3B3A4FC2C92393B00E0A968 /* Ejemplo3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3A4FB2C92393B00E0A968 /* Ejemplo3.swift */; };
@@ -35,6 +36,7 @@
 		D38609152C99735D00E384CD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		D38609172C9982AD00E384CD /* FavoriteGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGridCell.swift; sourceTree = "<group>"; };
 		D386091B2C998D5400E384CD /* FavoriteGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGrid.swift; sourceTree = "<group>"; };
+		D393D8C82C9A3BAA00DE7D63 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		D3B3A4F72C920E1200E0A968 /* Ejmplo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ejmplo.swift; sourceTree = "<group>"; };
 		D3B3A4F92C92156E00E0A968 /* ejemplo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ejemplo2.swift; sourceTree = "<group>"; };
 		D3B3A4FB2C92393B00E0A968 /* Ejemplo3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ejemplo3.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				D3EF5B602C75C8F100558003 /* EpisodeDTO.swift */,
 				D3EF5B622C75C95500558003 /* Episode.swift */,
+				D393D8C82C9A3BAA00DE7D63 /* UIDeviceExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				D3DCC0482C7E6B1A0000B7AB /* EpisodeList.swift in Sources */,
 				D3DCC04B2C7F20D10000B7AB /* EpisodeDetail.swift in Sources */,
 				D386091C2C998D5400E384CD /* FavoriteGrid.swift in Sources */,
+				D393D8C92C9A3BAA00DE7D63 /* UIDeviceExtension.swift in Sources */,
 				D3EF5B632C75C95500558003 /* Episode.swift in Sources */,
 				D3C531EF2C7E2EBE00E268A2 /* PreviewData.swift in Sources */,
 				D3EF5B612C75C8F100558003 /* EpisodeDTO.swift in Sources */,

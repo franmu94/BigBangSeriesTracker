@@ -50,7 +50,7 @@ final class EpisodesListViewModel {
     
     var favoriteEpisodes: [Episode] {
         allEpisodes
-            .filter { $0.isFavorited }
+           // .filter { $0.isFavorited }
     }
     
     

@@ -17,7 +17,7 @@ extension Episode {
                                   airdate: "2007-10-08",
                                   runtime: 30,
                                   image: "12370",
-                                  summary: "Leonard is bummed to learn that his crush, Penny, is seeing someone, so encouraged by his friends and fellow scientists, Leonard actually summons the nerve to ask a woman out on a date.\n",
+                                  summary: "Leonard is bummed to learn that his crush, Penny, is seeing someone, so encouraged by his friends and fellow scientLeonard is bummed to learn that his crush, Penny, is seeing someone, so encouraged by his friends and fellow sciLeonard is bummed to learn that his crush, Penny, is seeing someone, so encouraged by his friends and fellow sciLeonard is bummed to learn that his crush, Penny, is seeing someone, so encouraged by his friends and fellow sciLeonard is bummed to learn that his crush, Penny, is seeing someone, so encouraged by his friends and fellow sciLeonard is bummed to learn that his crush, Penny, is seeing someone, so encouraged by his friends and fellow sciists, Leonard actually summons the nerve to ask a woman out on a date.\n",
                                   isFavorited: true,
                                   watched: true,
                                   protagonist: "Leonard",

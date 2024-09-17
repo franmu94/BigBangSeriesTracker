@@ -39,7 +39,7 @@ struct ejemplo2: View {
                 Image("12107")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 312)
+                    .frame(width: UIDevice.width * 0.8)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 //.transition(.opacity)
                     .animation(.easeInOut, value: stickyImage)
@@ -54,21 +54,21 @@ struct ejemplo2: View {
                         Image("12107")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 312)
+                            .frame(width: UIDevice.width * 0.8)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         
                             .opacity(showFirstImage ? 1.0 : 0.0)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .onAppear {
-                                // Calcular desplazamiento inicial
                                 scrollOffset = geo.frame(in: .global).minY
                             }
                             .onChange(of: geo.frame(in: .global).minY) { newValue in
                                 scrollOffset = newValue
                                 if Int(scrollOffset) % 1 == 0{
                                     print(scrollOffset)
+                                    print(UIDevice.height * 0.1)
                                 }
-                                if newValue <= 58 {
+                                if newValue <= UIDevice.height * 0.115 {
                                     stickyImage = true
                                     showFirstImage = false
                                 } else {
@@ -78,7 +78,8 @@ struct ejemplo2: View {
                             }
                         
                     }
-                    .frame(height: 165)
+                    .padding(0)
+                    .frame(height: UIDevice.height * 0.20)
                 }
                 .listRowBackground(Color.clear)
                 
@@ -185,6 +186,7 @@ struct ejemplo2: View {
             
         }
         .navigationTitle(episode.tipicNumber)
+        .navigationBarTitleDisplayMode(.inline)
 
     }
 }
