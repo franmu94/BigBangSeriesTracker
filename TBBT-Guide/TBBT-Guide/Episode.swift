@@ -23,5 +23,5 @@ struct Episode: Codable, Hashable {
     var watched: Bool 
     let protagonist: String
     var score: Int
-    var notes: String?
+    var notes: String
 }

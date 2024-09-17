@@ -10,6 +10,7 @@ import SwiftUI
 struct EpisodeList: View {
     @Environment(EpisodesListViewModel.self) var vm
     @State var showSeasons: Bool = false
+    @State var searchText: String = ""
     var body: some View {
         NavigationStack {
             List {
@@ -31,12 +32,28 @@ struct EpisodeList: View {
             .navigationDestination(for: Episode.self) { episode in
                 EpisodeDeatil(episode: episode)
             }
-            .toolbar {
-                Button(action: {
-                    showSeasons = true
-                }, label: {
-                    Text("Temporada")
-                })
+            .toolbar{
+                ToolbarItem(placement: .navigationBarLeading) {
+                    if !vm.seasonsChoosed.contains(.todas) {
+                        Button(action: {
+                            vm.seasonWatched(as: !vm.areSeasonsWatched())
+                        }, label: {
+                            Text("Mark season\(vm.seasonsChoosed.count > 1 ? "s" : "") as \(vm.areSeasonsWatched() ? "un" : "")watched")
+                        })
+                    }
+                }
+                ToolbarItem (placement: .navigationBarTrailing){
+                    Button(action: {
+                        showSeasons = true
+                    }, label: {
+                        Text("Season")
+                    })
+                }
+            }
+            .navigationTitle("Episodes")
+            .searchable(text: $searchText, prompt: "Episode name")
+            .onChange(of: searchText) {
+                vm.searchText = searchText
             }
             .sheet(isPresented: $showSeasons, content: {
                 SeasonsGrid()

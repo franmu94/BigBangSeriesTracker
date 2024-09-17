@@ -22,7 +22,7 @@ struct SeasonsGrid: View {
                         VStack {
                             Image("season\(season.rawValue)")
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
-                            Text(season != .todas ? "Temporada \(season.rawValue)" : "Todas")
+                            Text(season != .todas ? "Season \(season.rawValue)" : "All")
                         }
                         .padding(8)
                         .background {

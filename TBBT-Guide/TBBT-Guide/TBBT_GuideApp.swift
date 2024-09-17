@@ -12,7 +12,7 @@ struct TBBT_GuideApp: App {
     @State var viewModel = EpisodesListViewModel()
     var body: some Scene {
         WindowGroup {
-            ejemplo2(episode: .preview1)
+            MainTabView()
                 .environment(viewModel)
         }
     }

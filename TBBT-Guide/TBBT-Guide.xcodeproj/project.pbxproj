@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D38609162C99735D00E384CD /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38609152C99735D00E384CD /* MainTabView.swift */; };
+		D38609182C9982AD00E384CD /* FavoriteGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38609172C9982AD00E384CD /* FavoriteGridCell.swift */; };
+		D386091C2C998D5400E384CD /* FavoriteGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386091B2C998D5400E384CD /* FavoriteGrid.swift */; };
 		D3B3A4F82C920E1200E0A968 /* Ejmplo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3A4F72C920E1200E0A968 /* Ejmplo.swift */; };
 		D3B3A4FA2C92156E00E0A968 /* ejemplo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3A4F92C92156E00E0A968 /* ejemplo2.swift */; };
 		D3B3A4FC2C92393B00E0A968 /* Ejemplo3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3A4FB2C92393B00E0A968 /* Ejemplo3.swift */; };
 		D3C531ED2C7E2E7D00E268A2 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C531EC2C7E2E7D00E268A2 /* EpisodeCell.swift */; };
 		D3C531EF2C7E2EBE00E268A2 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C531EE2C7E2EBE00E268A2 /* PreviewData.swift */; };
-		D3C6B6402C8F97E30086549F /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6B63F2C8F97E30086549F /* SwiftUIView.swift */; };
+		D3C6B6402C8F97E30086549F /* StarsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6B63F2C8F97E30086549F /* StarsComponent.swift */; };
 		D3DCC0462C7E6AE90000B7AB /* SeasonsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B6E2C7D285D00558003 /* SeasonsGrid.swift */; };
-		D3DCC0482C7E6B1A0000B7AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B4D2C75C3BE00558003 /* ContentView.swift */; };
+		D3DCC0482C7E6B1A0000B7AB /* EpisodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B4D2C75C3BE00558003 /* EpisodeList.swift */; };
 		D3DCC04B2C7F20D10000B7AB /* EpisodeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DCC04A2C7F20D10000B7AB /* EpisodeDetail.swift */; };
 		D3EF5B4C2C75C3BE00558003 /* TBBT_GuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B4B2C75C3BE00558003 /* TBBT_GuideApp.swift */; };
 		D3EF5B502C75C3BF00558003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EF5B4F2C75C3BF00558003 /* Assets.xcassets */; };
@@ -29,16 +32,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D38609152C99735D00E384CD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		D38609172C9982AD00E384CD /* FavoriteGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGridCell.swift; sourceTree = "<group>"; };
+		D386091B2C998D5400E384CD /* FavoriteGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGrid.swift; sourceTree = "<group>"; };
 		D3B3A4F72C920E1200E0A968 /* Ejmplo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ejmplo.swift; sourceTree = "<group>"; };
 		D3B3A4F92C92156E00E0A968 /* ejemplo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ejemplo2.swift; sourceTree = "<group>"; };
 		D3B3A4FB2C92393B00E0A968 /* Ejemplo3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ejemplo3.swift; sourceTree = "<group>"; };
 		D3C531EC2C7E2E7D00E268A2 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		D3C531EE2C7E2EBE00E268A2 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
-		D3C6B63F2C8F97E30086549F /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		D3C6B63F2C8F97E30086549F /* StarsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsComponent.swift; sourceTree = "<group>"; };
 		D3DCC04A2C7F20D10000B7AB /* EpisodeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetail.swift; sourceTree = "<group>"; };
 		D3EF5B482C75C3BE00558003 /* TBBT-Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBBT-Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EF5B4B2C75C3BE00558003 /* TBBT_GuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBBT_GuideApp.swift; sourceTree = "<group>"; };
-		D3EF5B4D2C75C3BE00558003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D3EF5B4D2C75C3BE00558003 /* EpisodeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeList.swift; sourceTree = "<group>"; };
 		D3EF5B4F2C75C3BF00558003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3EF5B522C75C3BF00558003 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3EF5B5E2C75C83C00558003 /* BigBang.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BigBang.json; sourceTree = "<group>"; };
@@ -75,7 +81,8 @@
 			children = (
 				D3C531EC2C7E2E7D00E268A2 /* EpisodeCell.swift */,
 				D3EF5B6E2C7D285D00558003 /* SeasonsGrid.swift */,
-				D3C6B63F2C8F97E30086549F /* SwiftUIView.swift */,
+				D3C6B63F2C8F97E30086549F /* StarsComponent.swift */,
+				D38609172C9982AD00E384CD /* FavoriteGridCell.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -158,7 +165,9 @@
 		D3EF5B5D2C75C7E100558003 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D3EF5B4D2C75C3BE00558003 /* ContentView.swift */,
+				D38609152C99735D00E384CD /* MainTabView.swift */,
+				D3EF5B4D2C75C3BE00558003 /* EpisodeList.swift */,
+				D386091B2C998D5400E384CD /* FavoriteGrid.swift */,
 				D3DCC04A2C7F20D10000B7AB /* EpisodeDetail.swift */,
 				D3DCC0492C7F20AC0000B7AB /* Components */,
 				D3B3A4F72C920E1200E0A968 /* Ejmplo.swift */,
@@ -239,18 +248,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3C6B6402C8F97E30086549F /* SwiftUIView.swift in Sources */,
+				D3C6B6402C8F97E30086549F /* StarsComponent.swift in Sources */,
 				D3DCC0462C7E6AE90000B7AB /* SeasonsGrid.swift in Sources */,
-				D3DCC0482C7E6B1A0000B7AB /* ContentView.swift in Sources */,
+				D3DCC0482C7E6B1A0000B7AB /* EpisodeList.swift in Sources */,
 				D3DCC04B2C7F20D10000B7AB /* EpisodeDetail.swift in Sources */,
+				D386091C2C998D5400E384CD /* FavoriteGrid.swift in Sources */,
 				D3EF5B632C75C95500558003 /* Episode.swift in Sources */,
 				D3C531EF2C7E2EBE00E268A2 /* PreviewData.swift in Sources */,
 				D3EF5B612C75C8F100558003 /* EpisodeDTO.swift in Sources */,
 				D3EF5B4C2C75C3BE00558003 /* TBBT_GuideApp.swift in Sources */,
 				D3B3A4FC2C92393B00E0A968 /* Ejemplo3.swift in Sources */,
+				D38609162C99735D00E384CD /* MainTabView.swift in Sources */,
 				D3B3A4FA2C92156E00E0A968 /* ejemplo2.swift in Sources */,
 				D3C531ED2C7E2E7D00E268A2 /* EpisodeCell.swift in Sources */,
 				D3EF5B672C75CDF700558003 /* jsonInteractor.swift in Sources */,
+				D38609182C9982AD00E384CD /* FavoriteGridCell.swift in Sources */,
 				D3EF5B652C75C9D700558003 /* EpisodeListInteractor.swift in Sources */,
 				D3EF5B6D2C77DCEB00558003 /* ViewModel.swift in Sources */,
 				D3B3A4F82C920E1200E0A968 /* Ejmplo.swift in Sources */,

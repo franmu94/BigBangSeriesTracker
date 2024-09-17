@@ -9,10 +9,21 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            EpisodeList()
+                .tabItem {
+                    Label("Episode List", systemImage:  "list.dash")
+                }
+            FavoriteGrid()
+                .tabItem {
+                    Label("Favorites", systemImage:  "heart.fill")
+                }
+        }
     }
 }
 
 #Preview {
     MainTabView()
+        .environment(EpisodesListViewModel())
+
 }

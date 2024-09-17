@@ -9,10 +9,11 @@ import SwiftUI
 
 struct EpisodeDeatil: View {
     @Environment(EpisodesListViewModel.self) var vm
-
+    
     @State var episode: Episode
     @State private var showInfo = false
     @State private var showSumary = false
+    @Environment(\.dismiss) private var dismiss
     
     
     var body: some View {
@@ -22,15 +23,15 @@ struct EpisodeDeatil: View {
                     .resizable()
                     .scaledToFill()
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                    //.padding()
-                    
-                    //.listRowBackground(Color.clear)
+                //.padding()
+                
+                //.listRowBackground(Color.clear)
             }
             
             Section(header: Text("Title")) {
                 Text(episode.name)
             }
-
+            
             
             Section(header:
                         HStack {
@@ -76,50 +77,61 @@ struct EpisodeDeatil: View {
                 }
             }
             HStack {
-                Section {
-                    Spacer()
-                    Button(action: {
-                        episode.watched.toggle()
-                        if !episode.watched {
-                            episode.score = 0
-                        }
-                        episode.score = 0
-                        
-                        vm.watchedToggle(episode: episode)
-                        
-                    }) {
-                        Image( systemName: "eye" )
-                            .resizable()
-                            .frame(width: 60, height: 40)
-                            .foregroundColor(episode.watched ? .blue.opacity(0.7) : .gray)
-                    }
-                    Spacer()
-                    Spacer()
-                    Button(action: {
-                        episode.isFavorited.toggle()
-                    }) {
-                        Image( systemName: "heart.fill" )
-                            .resizable()
-                            .frame(width: 50, height: 40)
-                            .foregroundColor(episode.isFavorited ? .red.opacity(0.7) : .gray)
-                    }
-                    Spacer()
-                    
+                Spacer()
+                Button(action: {
+                    episode.watched.toggle()
+                }) {
+                    Image( systemName: "eye" )
+                        .resizable()
+                        .frame(width: 60, height: 40)
+                        .foregroundColor(episode.watched ? .blue.opacity(0.7) : .gray)
                 }
+                Spacer()
+                Spacer()
+                Button(action: {
+                    episode.isFavorited.toggle()
+                }) {
+                    Image( systemName: "heart.fill" )
+                        .resizable()
+                        .frame(width: 50, height: 40)
+                        .foregroundColor(episode.isFavorited ? .red.opacity(0.7) : .gray)
+                }
+                Spacer()
+                
             }
             .listRowBackground(Color.clear) // Evita el fondo de formulario
             .buttonStyle(BorderlessButtonStyle())
-            Section(header: Text("Your review")) {
+            Section(header: Text("My review")) {
                 StarsComponen(nota: $episode.score)
+                    .padding()
             }
             .buttonStyle(BorderlessButtonStyle())
             
+            VStack(alignment: .leading) {
+                Text("My notes")
+                    .font(.headline)
+                TextField("Enter notes", text: $episode.notes)
+            }
             
         }
         .navigationTitle(episode.tipicNumber)
         .navigationBarTitleDisplayMode(.inline)
         .background {
             Color(.red)
+        }
+        .navigationBarBackButtonHidden(true)  // Oculta el botón de retroceso predeterminado
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    vm.updateEpisode(episode: episode)
+                    dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                }
+            }
         }
         
     }

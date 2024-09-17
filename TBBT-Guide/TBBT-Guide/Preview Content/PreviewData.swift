@@ -21,7 +21,8 @@ extension Episode {
                                   isFavorited: true,
                                   watched: true,
                                   protagonist: "Leonard",
-                                  score: 0)
+                                  score: 0,
+                                  notes: "")
     
     static let preview2 = Episode(id: 2913,
                                   url: URL(string: "https://www.tvmaze.com/episodes/2915/the-big-bang-theory-1x03-the-fuzzy-boots-corollary")!,
@@ -36,5 +37,8 @@ extension Episode {
                                   isFavorited: true,
                                   watched: false, 
                                   protagonist: "Sheldom",
-                                  score: 0)
+                                  score: 0,
+                                  notes: "")
 }
+
+

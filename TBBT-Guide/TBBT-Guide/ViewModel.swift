@@ -31,9 +31,11 @@ final class EpisodesListViewModel {
     var allEpisodes: [Episode] = [] {
         didSet {
             print("Se guarda")
-           try? episodesInteractor.saveEpisodes(episodes: allEpisodes)
+            try? episodesInteractor.saveEpisodes(episodes: allEpisodes)
         }
     }
+    
+    var searchText: String = ""
     
     var filteredEpisodes: [Episode] {
         allEpisodes.filter {
@@ -43,10 +45,16 @@ final class EpisodesListViewModel {
                 true
             }
         }
+        .filter { searchText.isEmpty ? true : $0.name.contains(searchText)}
+    }
+    
+    var favoriteEpisodes: [Episode] {
+        allEpisodes
+            .filter { $0.isFavorited }
     }
     
     
-    var seasonsChoosed: Set<Seasons> = [.Primera]
+    var seasonsChoosed: Set<Seasons> = [.todas]
     
     init(episodesInteractor: EpisodeListInteractor = .shared) {
         self.episodesInteractor = episodesInteractor
@@ -59,6 +67,13 @@ final class EpisodesListViewModel {
         } catch {
             print(error)
         }
+    }
+    
+    func searchEpisodes(searchText: String) -> [Episode] {
+        filteredEpisodes.filter { searchText.isEmpty ? true : $0.name.contains(searchText)}
+    }
+    func giveSearch(text: String) {
+        searchText = text
     }
     func watchedToggle(episode: Episode) {
         if let index = allEpisodes.firstIndex(of: episode) {
@@ -85,5 +100,37 @@ final class EpisodesListViewModel {
             seasonsChoosed.remove(.todas)
             seasonsChoosed.insert(season)
         }
+    }
+    
+    func updateEpisode(episode: Episode) {
+        if let index = allEpisodes.firstIndex(where: { $0.id == episode.id }) {
+            allEpisodes[index] = episode
+        }
+    }
+    
+    func seasonWatched(as value: Bool = true) {
+        searchText = ""
+        filteredEpisodes.forEach { episode in
+            let episodeWatched = Episode(id: episode.id,
+                                         url: episode.url,
+                                         name: episode.name,
+                                         season: episode.season,
+                                         number: episode.number,
+                                         tipicNumber: episode.tipicNumber,
+                                         airdate: episode.airdate,
+                                         runtime: episode.runtime,
+                                         image: episode.image,
+                                         summary: episode.summary,
+                                         isFavorited: episode.isFavorited,
+                                         watched: value,
+                                         protagonist: episode.protagonist,
+                                         score: episode.score,
+                                         notes: episode.notes)
+            updateEpisode(episode: episodeWatched)
+        }
+    }
+    
+    func areSeasonsWatched() -> Bool {
+        filteredEpisodes.allSatisfy { $0.watched }
     }
 }
