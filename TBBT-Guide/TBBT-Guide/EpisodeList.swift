@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct EpisodeList: View {
     @Environment(EpisodesListViewModel.self) var vm
     @State var showSeasons: Bool = false
     var body: some View {
@@ -27,10 +27,10 @@ struct ContentView: View {
                     }
                 }
             }
-            //.listStyle(.inset)
-            .navigationDestination(for: Episode.self, destination: { episode in
+            .listStyle(.inset)
+            .navigationDestination(for: Episode.self) { episode in
                 EpisodeDeatil(episode: episode)
-            })
+            }
             .toolbar {
                 Button(action: {
                     showSeasons = true
@@ -46,6 +46,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    EpisodeList()
         .environment(EpisodesListViewModel())
 }
